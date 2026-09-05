@@ -1,0 +1,8 @@
+1. How long has the system been running?
+A. Use uptime command to know the details of system uptime.
+
+2. How many users are currently logged in?
+A. With uptime command it can be determined how many users are logged in currenty to the server.
+
+3. What are the 1-minute, 5-minute and 15-minute load averages?
+A. 

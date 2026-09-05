@@ -1,0 +1,104 @@
+1. What is the difference between mkdir and touch?
+A: mkdir creates a directory.
+   touch creates an empty file if the file does not exist.
+   If the file already exists, touch updates its timestamp.
+
+2. What is the difference between cp and mv?
+A: cp copies a file or directory while keeping the original.
+   mv moves a file or directory from one location to another.
+   mv can also be used to rename files or directories.
+
+3. What happens when you use cat > file.txt and the file already exists?
+A: cat > file.txt overwrites the existing file. The previous contents are deleted and replaced with the new data.
+
+    Example:
+
+        cat > file.txt
+        Hello
+        Ctrl+D
+        f file.txt previously contained data, that data will be replaced.
+
+4. What happens when you use cat >> file.txt and the file already exists?
+A: cat >> file.txt appends the new data to the end of the existing file. The previous contents are preserved.
+
+    Example:
+
+        cat >> file.txt
+        Appends below the existing content
+
+5. What does Ctrl+D do when using cat > file.txt?
+A: Ctrl+D exits the file which is in editing mode using cat command.
+
+6. What is the difference between cat and tac?
+A: cat displays file contents in normal order, from the first line to the last line.
+   tac displays file contents in reverse line order, from the last line to the first line.
+   Example:
+
+    File:
+
+        Line 1
+        Line 2
+        Line 3
+
+    cat file.txt:
+
+        Line 1
+        Line 2
+        Line 3
+
+    tac file.txt:
+
+        Line 3
+        Line 2
+        Line 1
+
+7. What is the purpose of the head command?
+A: The head command displays the beginning of a file. By default, it displays the first 10 lines.
+
+   Example:
+    
+    head file.txt
+
+8. What is the purpose of the tail command?
+A: The tail command displays the end of a file. By default, it displays the last 10 lines.
+
+   Example:
+
+    tail file.txt
+
+9. How do you display only the first 5 lines of a file?
+A: head -n 5 file.txt
+
+10. How do you display only the last 5 lines of a file?
+A: tail -n 5 file.txt
+
+11. What happens when you use mv to move a file to another directory?
+A: The mv command moves the file from the source location to the destination directory. The file will no longer be present in the original location.
+
+   Example:
+
+    mv file.txt /home/user/Documents/
+       (source)   (destination absolute path)
+
+12. Can cp copy a directory? If yes, what option is generally required?
+A: Yes. To copy a directory and its contents, the -r (recursive) option is generally required.
+
+   Example:
+
+    cp -r source_directory destination_directory
+
+13. Where do you find system log files in Linux?
+A: Most traditional Linux system log files are stored in:
+
+   /var/log
+
+   Example:
+
+    ls /var/log
+
+   Common log files/directories include:
+
+    /var/log/syslog
+    /var/log/messages
+    /var/log/auth.log
+    /var/log/secure

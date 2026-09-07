@@ -1,0 +1,64 @@
+Q. How to Display the first 10 lines of the log/file?
+A. For dipalying the first 10 lines in a file use the below command:
+    head <filename>
+        (or)
+    head -n 10 <filename>
+
+Q. How to Display the first 20 lines?
+A. head -n 10 <filename>
+
+Q. How to Display the last 10 lines?
+A. tail <file name> (or) tail -n 10 <filename>
+
+Q. How to Display the last 5 lines?
+A. tail -n 5 <filename>
+
+Q. How to Display lines 35 to 50?
+A. head -n 50 <filename> | tail -n 15
+
+Q. How to Display only lines 41 to 45?
+A. head -n 45 <filename> | tail -n 5
+
+Q. Open the log using tail -f and add some new log entries from another terminal. Observe what happens.
+A. -f is  an option which is used to monitor the floating logs.
+    Example: 1 user is working on a file making an input for monitoring that other user can watch the changes being made in the file ny using the above command.
+
+Q. How to Find all lines containing ERROR?
+A. grep ERROR <filename>
+
+Q. How to Search for error without worrying about uppercase/lowercase?
+A. grep -i ERROR <filename>
+
+    note: -i ignores the case sensitivity
+
+Q. How to Find the number of lines containing ERROR?
+A. wc -l <filename> will display total lines of words filled in that particular file.
+    wc: word count
+    -l: counts lines
+
+
+Q. How to Display the line numbers where ERROR appears?
+A. grep -n ERROR <filename> this will show the number of that specific line number where the erorr is in the file.
+
+Q. How to Display all lines that do not contain ERROR?
+A. grep -v ERROR <filename>
+    -v in this command ignores the word mentioned in the command i.e., ERROR & diaplys the rest of the lines which doesn't contains errors
+
+Q. How to Display 5 lines before every ERROR?
+A. grep -A5 ERROR <filename>
+    -A5 means displays the 5 lines after the mentioned keyword in the command.
+
+Q. How to Display 5 lines after every ERROR?
+A. grep -B5 ERROR <filename>
+    -B5 means displays the 5 lines before the mentioned keyword in the command.
+
+Q. How to Display 5 lines before and after every ERROR?
+A. grep -A5 -B5 ERROR <filename>
+                (or)
+   grep -C5 ERROR <filename>
+
+Q. How to Search for the word "database" in the log without worrying about case sensitivity?
+A. grep -i database <filename>
+    -i ignores case sensitivity.
+
+

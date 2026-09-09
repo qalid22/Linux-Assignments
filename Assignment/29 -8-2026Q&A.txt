@@ -87,3 +87,39 @@ A. Thread: A thread is a single sequence of instructions that a program can exec
 10. What is the difference between a process and a thread?
 A. Process is an Independent running program.
    Thread is anExecution unit inside a process.
+
+time find /var -type f
+
+    this command find all regular files under /var, print their paths, and tells how long the search took.
+
+Output: all the file info along with the time taken to perfom the command.
+
+    real    0m0.044s
+    user    0m0.008s
+    sys     0m0.033s
+
+Q. What is real time?
+A. Real time = actual elapsed time experienced by you.
+
+Q. What is user time?
+A. CPU time spent executing the program's code in user space.
+
+Q. What is sys time?
+A. CPU time spent inside the Linux kernel on behalf of the program.
+
+PACKAGES:
+
+Install Application:
+
+apt update --> will update the packages related to linux.
+
+apt install <appname> -y --> installs the application after searching the library if avaialble.
+        -y --> skips confirmation & Install directly
+
+<appname> -v --> will verify whether the application is installed.
+
+apt remove <appname> --> will delete the application if installed
+
+apt purge <appname> --> will remove the config file, data of the application afteremoving the application.
+
+**note**: update, install, remove & purge commands works only with the sudo access or as root user.

@@ -1,8 +1,89 @@
+system monitoring commands:
+
+uptime --> to check how many users are logged in at that particular time, cpu avg 1min, 5min, 15 min, uptime 
+
+free --> used to check memory utilization 
+
+Note:
+
+total --> RAM size
+used --> current utilization 
+free --> idle memory 
+shared --> tempfs utilization
+buff/cache --> kernel buffers/cache
+available --> free + reclaimable from buff/cache 
+
+free -h --> to see output in human redable format
+
+swap memory is a partition in your hard-disk which will be used as virtual memory 
+
+watch --> to watch the output of a command every 2 seconds by default
+
+watch -n 5 free -h --> to watch output every 5 seconds interval 
+
+top --> to see real time utilization of cpu and also memory 
+
+top -d <seconds> --> interval between output 
+
+top -n <times> --> no of times you want to see the output of top command 
+
+top -b -n 2 --> prints in batches, two times 
+
+top -c --> to see the full commands 
+
+time  <command> --> to know how much time a command is taking to execute a command 
+
+df -h  --> to see the disk utilization
+
+df -h . --> to see the folder belongs to which disk 
+
+du -sh --> to see which folder/file is actually taking up the space 
+
+du -h --max-depth=1 /var --> one sub-folder inside var it will give the utilization
+
+Q and A:
+
 1. How long has the system been running?
-A. Use uptime command to know the details of system uptime.
+A. Use "uptime" command to know the details of system uptime.
 
 2. How many users are currently logged in?
-A. With uptime command it can be determined how many users are logged in currenty to the server.
+A. With "uptime" command it can be determined how many users are logged in currenty to the server.
 
 3. What are the 1-minute, 5-minute and 15-minute load averages?
-A. 
+A. three numbers that show the average amount of computer work—such as running processes or tasks waiting for the CPU and disk storage—over those specific time frames
+
+4. What is the PID?
+A. PID stands for Process Identifier. It is a unique numerical ID (a positive integer) that the Linux kernel automatically assigns to every active, running instance of a program (known as a process).
+        ps -e --> command gives the details of all the process running in the system along with PID
+        ps -ef --> provides you more info such as stime.
+        ps -ef | grep <PID>/<process name> --> will fetch the mentioned process or process associated with PID info.
+        ps -f -u <usename> --> only mentioned user related process will be displayed.
+        ps -p <process-id> will give you details about that process 
+        ps -aux --> give you further more details 
+        ps -T -p <process-id> --> to see the thread id and number of threads of the process 
+
+5. Who owns the process?
+A. "ps aux" is the command for schecking the info on the process owner along with PID & more info.
+    " ps -o user= -p <PID>" is the commad to know the process owner using PID.
+
+        note: Standard users can only view and kill processes where they are the owner (RUID).
+              root (UID 0) can view, signal, modify, and terminate any process running on the system, regardless of who owns it.
+
+6. When was the process started?
+A. time <PID> --> Displayes the info of that specific process with the PID mentioned in the command
+
+        Ex: time 4480
+        a:  real    0m0.191s
+        user    0m0.093s
+        sys     0m0.043s
+
+7. How many threads does it have?
+A. "ps -T -p <PID>" --> to view the thread id and number of threads of the process
+
+9. What are the thread IDs?
+A. Thread: A thread is a single sequence of instructions that a program can execute independently.
+   A Thread ID is a unique number that Linux assigns to a thread so the kernel can identify and manage that particular thread.
+
+10. What is the difference between a process and a thread?
+A. Process is an Independent running program.
+   Thread is anExecution unit inside a process.
